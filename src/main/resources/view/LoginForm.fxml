@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.liveChat.controller.LoginFormController">
+   <children>
+      <JFXButton layoutX="527.0" layoutY="347.0" onAction="#btnLoginOnAction" prefHeight="43.0" prefWidth="187.0" style="-fx-background-color: lightyellow;" text="Login" />
+      <JFXTextField fx:id="txtUsername" layoutX="87.0" layoutY="347.0" prefHeight="43.0" prefWidth="422.0" promptText="Enter Username Here!" />
+   </children>
+</AnchorPane>
