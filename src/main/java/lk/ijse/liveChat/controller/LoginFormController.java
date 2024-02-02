@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -21,6 +22,7 @@ public class LoginFormController extends Thread{
         Stage stage = new Stage();
         stage.setScene(new Scene(FXMLLoader.load(LoginFormController.class.getResource("/view/ClientForm.fxml"))));
         stage.setTitle("Live Chat");
+        stage.getIcons().add(new Image("/img/PlayTech.png"));
         stage.close();
         stage.centerOnScreen();
         stage.show();

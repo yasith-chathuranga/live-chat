@@ -2,11 +2,34 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.liveChat.controller.LoginFormController">
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: B2EBF9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.liveChat.controller.LoginFormController">
    <children>
-      <JFXButton layoutX="527.0" layoutY="347.0" onAction="#btnLoginOnAction" prefHeight="43.0" prefWidth="187.0" style="-fx-background-color: lightyellow;" text="Login" />
-      <JFXTextField fx:id="txtUsername" layoutX="87.0" layoutY="347.0" prefHeight="43.0" prefWidth="422.0" promptText="Enter Username Here!" />
+      <JFXButton layoutX="527.0" layoutY="347.0" onAction="#btnLoginOnAction" prefHeight="43.0" prefWidth="187.0" style="-fx-background-color: black; -fx-background-radius: 20;" text="Login" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <JFXTextField fx:id="txtUsername" focusColor="BLACK" labelFloat="true" layoutX="87.0" layoutY="347.0" prefHeight="43.0" prefWidth="422.0" promptText="Enter Username Here!" unFocusColor="#685fee">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></JFXTextField>
+      <Label layoutX="264.0" layoutY="206.0" prefHeight="86.0" prefWidth="272.0" text="Welcome to Play Tech! Chat with friends, share photos, and make memories. Let's get started!" textAlignment="CENTER" textFill="#424243" wrapText="true" />
+      <ImageView fitHeight="177.0" fitWidth="150.0" layoutX="325.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/loginImg.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

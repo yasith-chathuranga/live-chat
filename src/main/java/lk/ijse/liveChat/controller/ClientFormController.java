@@ -1,5 +1,7 @@
 package lk.ijse.liveChat.controller;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,11 +21,18 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+import lk.ijse.liveChat.utill.DateTimeUtil;
 
 import java.io.*;
 import java.net.Socket;
 
 public class ClientFormController extends Thread{
+    @FXML
+    private Text lblTime;
+
+    @FXML
+    private Text lblDate;
     @FXML
     public Label lblName;
 
@@ -43,6 +52,10 @@ public class ClientFormController extends Thread{
     private FileChooser fileChooser;
     private File filePath;
 
+    private void updateClock() {
+        lblTime.setText(DateTimeUtil.timeNow());
+    }
+
     public void initialize() throws IOException{
         String userName = LoginFormController.userName;
         lblName.setText(userName);
@@ -57,6 +70,12 @@ public class ClientFormController extends Thread{
         }catch (IOException e){
             e.printStackTrace();
         }
+
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> updateClock()));
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
+
+        lblDate.setText(DateTimeUtil.dateNow());
     }
 
     @Override
@@ -145,7 +164,7 @@ public class ClientFormController extends Thread{
                     hBox1.setPadding(new Insets(10));
 
                     if (!username.equalsIgnoreCase(lblName.getText())) {
-                        hBox1.setStyle("-fx-background-color: lightGreen;"+
+                        hBox1.setStyle("-fx-background-color: D1D1D1;"+
                                 "-fx-background-radius: 15px");
 
                         vBox.setAlignment(Pos.TOP_LEFT);
@@ -156,7 +175,7 @@ public class ClientFormController extends Thread{
 
                     }
                     else {
-                        hBox1.setStyle("-fx-background-color: lightBlue;"+
+                        hBox1.setStyle("-fx-background-color: B2EBF9;"+
                                 "-fx-background-radius: 15px");
 
                         Text text2 = new Text(message + ": Me");
